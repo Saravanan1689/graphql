@@ -1,0 +1,109 @@
+"""
+Root Query type for the GraphQL API
+"""
+type Query {
+    """
+    Get information about a specific store by name
+    """
+    store(name: String!): Store
+    
+    """
+    Get information about all available stores
+    """
+    allStores: [Store]!
+}
+
+"""
+Represents a Shopify store with various metrics
+"""
+type Store {
+    """
+    The name of the store
+    """
+    name: String!
+    
+    """
+    User count information for the store
+    """
+    userCount: UserCount
+    
+    """
+    Order count information for the store
+    """
+    orderCount: OrderCount
+    
+    """
+    Cart abandonment information for the store
+    """
+    cartAbandonment: CartAbandonment
+    
+    """
+    Revenue information for the store
+    """
+    revenue: Revenue
+}
+
+"""
+Information about user counts for a store
+"""
+type UserCount {
+    """
+    The total number of users
+    """
+    count: Int
+    
+    """
+    When this information was last updated
+    """
+    lastUpdated: String
+}
+
+"""
+Information about order counts for a store
+"""
+type OrderCount {
+    """
+    The total number of orders
+    """
+    count: Int
+    
+    """
+    When this information was last updated
+    """
+    lastUpdated: String
+}
+
+"""
+Information about cart abandonment for a store
+"""
+type CartAbandonment {
+    """
+    The number of abandoned carts
+    """
+    count: Int
+    
+    """
+    When this information was last updated
+    """
+    lastUpdated: String
+}
+
+"""
+Information about revenue for a store
+"""
+type Revenue {
+    """
+    The total revenue amount
+    """
+    total: Float
+    
+    """
+    The currency of the revenue
+    """
+    currency: String
+    
+    """
+    When this information was last updated
+    """
+    lastUpdated: String
+}

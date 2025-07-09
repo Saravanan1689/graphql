@@ -1,0 +1,14 @@
+spring:
+  application:
+    name: shopify-graphql
+
+server:
+  port: 8080
+
+logging:
+  level:
+    root: INFO
+    com.shopify.graphql: INFO
+    org.springframework.web.reactive.function.client.ExchangeFilterFunction: INFO
+  file:
+    name: /logs/shopify-graphql.log

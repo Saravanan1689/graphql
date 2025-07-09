@@ -1,0 +1,96 @@
+spring:
+  application:
+    name: shopify-graphql
+  graphql:
+    graphiql:
+      enabled: true
+    schema:
+      printer:
+        enabled: true
+    path: /graphql
+  jackson:
+    serialization:
+      write-dates-as-timestamps: false
+
+server:
+  port: 8080
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,metrics
+
+logging:
+  level:
+    root: INFO
+    com.shopify.graphql: DEBUG
+    org.springframework.web.reactive.function.client.ExchangeFilterFunction: DEBUG
+
+shopify:
+  stores:
+    cocoavia:
+      access-token: Yfx0Nb3J0YpdGVJqGp1Yf4dcgg4LOL+yd4zPL6hxu/j5DeKuqR2LTvrv/gb+9BsYLe6f0JgE
+      users-visited-url: https://cocoa-via-staging.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://cocoa-via-staging.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://cocoa-via-staging.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://cocoa-via-staging.myshopify.com/admin/api/2023-10/orders.json?status
+    greenies:
+      access-token: Yfx0Nb3J0YwCSwY/GJgNINkPjQ1aPezid96ULv9zvfn/B+eo/hGDM8GWGWuWcgnXXvFjy1ZR
+      users-visited-url: https://shopgreenies-dev.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://shopgreenies-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://shopgreenies-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://shopgreenies-dev.myshopify.com/admin/api/2023-10/orders.json?status
+    temptations:
+      access-token: Yfx0Nb3J244DTVNvSpoKddkPhQ9fO+jjddiUKf506ar7XOitqRRKM+ZQT6OTaunsWTfK9rXu
+      users-visited-url: https://shoptemptations-dev.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://shoptemptations-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://shoptemptations-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://shoptemptations-dev.myshopify.com/admin/api/2023-10/orders.json?status
+    crave:
+      access-token: Yfx0Nb3J0NsISlJoHc5ffotYhVgJOryxd9zCLq1yv6ypCums+xKwxLn52moKD55aK3HgVUBp
+      users-visited-url: https://cravepetfoods-dev.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://cravepetfoods-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://cravepetfoods-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://cravepetfoods-dev.myshopify.com/admin/api/2023-10/orders.json?status
+    advance_D2B:
+      access-token: Yfx0Nb3J0YoNGgZvTM1dJ9oAgQsAaujkctvAePYkuv/7Duil/Ryb4EHc34wpBlELEGEO5EHk
+      users-visited-url: https://advreno-d2b.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://advreno-d2b.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://advreno-d2b.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://advreno-d2b.myshopify.com/admin/api/2023-10/orders.json?status
+    advance_D2C:
+      access-token: Yfx0Nb3J0YteGVI+GMwIcocI1w1fb7DsdYTPLf8nuav4CbOqrUEcVbciuD9hdYH78g+aJWLL
+      users-visited-url: https://advance-pet-dev.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://advance-pet-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://advance-pet-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://advance-pet-dev.myshopify.com/admin/api/2023-10/orders.json?status
+    direct2Pet:
+      access-token: Yfx0Nb3J2tgIRgY4TcQOcdpc0FsPaL2wJ4TGKKh97Pv9C+Os/UC4NBw/By7y9bOV3G+/yANV
+      users-visited-url: https://karmapetfoods-dev.myshopify.com/admin/api/2024-01/customers/count.json?
+      total-orders-url: https://karmapetfoods-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://karmapetfoods-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://karmapetfoods-dev.myshopify.com/admin/api/2023-10/orders.json?status
+    jwb_UK:
+      access-token: Yfx0Nb3Jh9hZSwJjTsQKcYYBgVgOb+rgIIjEKP51tKj6Cuiq+xfYCLCIihqNgILwJ5B6IbYG
+      users-visited-url: https://jwb-uk-development.myshopify.com/admin/api/2024-01/customers/count.json
+      total-orders-url: https://jwb-uk-development.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://jwb-uk-development.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: 
+    jwb_DE:
+      access-token: Yfx0Nb3JgYdeSAI4TppbctsJggIIaL23c4iTLKwj7/+uWrT++UV41qff9oRNEPnXfRonZPOi
+      users-visited-url: https://wellbeloved-de-test.myshopify.com/admin/api/2024-01/customers/count.json
+      total-orders-url: https://wellbeloved-de-test.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://wellbeloved-de-test.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://wellbeloved-de-test.myshopify.com/admin/api/2023-10/orders.json?status
+    jwb_Breeders:
+      access-token: Yfx0Nb3Jh48DTgZsTswJJYgL1lxbb+vsdorHLKgntar9W7X4/BDmW53H4TQlshkV/n875Dot
+      users-visited-url: https://nuzzle-live-dev.myshopify.com/admin/api/2024-01/customers/count.json
+      total-orders-url: https://nuzzle-live-dev.myshopify.com/admin/api/2024-04/orders/count.json?status=any
+      cart-abandonment-url: https://nuzzle-live-dev.myshopify.com/admin/api/2024-04/checkouts.json?limit=1
+      total-revenue-url: https://nuzzle-live-dev.myshopify.com/admin/api/2023-10/orders.json?status
+
+  client:
+    connect-timeout: 5000
+    read-timeout: 5000
+    write-timeout: 5000
